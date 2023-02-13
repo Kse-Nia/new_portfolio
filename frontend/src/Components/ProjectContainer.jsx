@@ -12,7 +12,14 @@ import {
   Image,
   Button,
   Icon,
+  Fade,
+  ScaleFade,
+  Slide,
+  SlideFade,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import { BsGithub } from "react-icons/bs";
 import { IoOpenOutline } from "react-icons/io5";
 import mySql from "../Assets/mysql.png";
@@ -23,8 +30,13 @@ import express from "../Assets/express.svg";
 import sass from "../Assets/sass.png";
 
 const ProjectContainer = () => {
+  // Animation on scroll
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+
   return (
-    <Container>
+    <Container ref={ref}>
       <Stack spacing={4}>
         <Card
           direction={{ base: "column", sm: "row" }}

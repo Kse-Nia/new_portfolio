@@ -2,6 +2,7 @@ import { Link, Box, Container } from "@chakra-ui/react";
 import ProjectContainer from "./Components/ProjectContainer";
 import CardProject from "./Components/CardProject";
 import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
 import Skills from "./Components/Skills";
 import ContactForm from "./Components/ContactForm";
 
@@ -10,7 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <p>Hello</p>
-      {/*   <ProjectContainer /> */}
+      <Home />
       <Skills />
       <CardProject />
       <ContactForm />

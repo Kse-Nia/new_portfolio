@@ -6,7 +6,6 @@ const Navbar = () => {
   return (
     <Container
       sx={{
-        /* background: "#3C3839", */
         background: "#2D2B2B",
         maxWidth: "100vw",
         minHeight: "8vh",
@@ -21,10 +20,10 @@ const Navbar = () => {
             <Link href="/me" mr={4}>
               About
             </Link>
-            <Link href="/me" mr={4}>
+            <Link href="#skills" mr={4}>
               Skills
             </Link>
-            <Link href="/projects" mr={4}>
+            <Link href="#projects" mr={4}>
               Mes projets
             </Link>
             <Link href="/contact" mr={4}>
