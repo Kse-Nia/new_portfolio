@@ -1,24 +1,39 @@
 import React from "react";
-import { Link, Box } from "@chakra-ui/react";
+import { Link, Box, Container } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   return (
-    <header>
-      <nav>
-        <Box display="flex" justifyContent="center">
-          <Link href="/me" color="teal.500" mr={4}>
-            About
-          </Link>
-          <Link href="/projects" color="teal.500" mr={4}>
-            Projects
-          </Link>
-          <Link href="/contact" color="teal.500" mr={4}>
-            Contact
-          </Link>
-        </Box>
-      </nav>
-    </header>
+    <Container
+      sx={{
+        /* background: "#3C3839", */
+        background: "#2D2B2B",
+        maxWidth: "100vw",
+        minHeight: "8vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <header>
+        <nav>
+          <Box color="white">
+            <Link href="/me" mr={4}>
+              About
+            </Link>
+            <Link href="/me" mr={4}>
+              Skills
+            </Link>
+            <Link href="/projects" mr={4}>
+              Mes projets
+            </Link>
+            <Link href="/contact" mr={4}>
+              Contact
+            </Link>
+          </Box>
+        </nav>
+      </header>
+    </Container>
   );
 };
 
