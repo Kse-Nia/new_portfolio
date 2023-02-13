@@ -24,6 +24,7 @@ const Home = () => {
   return (
     <Box minHeight="60vh" backgroundColor="white">
       <h1>Welcome</h1>
+      <p>My name is</p>
     </Box>
   );
 };
