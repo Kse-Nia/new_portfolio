@@ -33,6 +33,7 @@ import sass from "../Assets/sass.png";
 
 // Websites screenshots
 import food from "../Assets/ohmyfood.webp";
+import groupomania from "../Assets/groupomania.webp";
 
 function Feature({ title, image, desc, techno, href, linkcode, ...rest }) {
   const handleClick = (event) => {
@@ -48,7 +49,7 @@ function Feature({ title, image, desc, techno, href, linkcode, ...rest }) {
       >
         <Image
           objectFit="cover"
-          maxW={{ base: "100%", sm: "200px" }}
+          /* maxW={{ base: "100%", sm: "200px" }} */
           src={image}
           alt="Caffe Latte"
         />
@@ -128,6 +129,7 @@ const CardProject = () => {
         (Create, Read, Update, Delete). Les utilisateurs peuvent publier
         des posts avec des images et du texte, les commenter et de liker
         les publications."
+              image={groupomania}
               linkcode="https://github.com/Kse-Nia/Groupomania"
               techno="MySQL, Sequelize, Node, React, Redux Toolkit"
             />

@@ -6,12 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  list-style: none;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 .App {
   min-height: 100vh;
@@ -22,4 +23,39 @@ code {
     #472359 50%,
     #693483 100%
   );
+}
+
+/* Navbar animation */
+nav {
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li .link {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fdfdfd;
+}
+
+.hover-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: blue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover + .hover-bar {
+  transform: scaleX(1);
 }
