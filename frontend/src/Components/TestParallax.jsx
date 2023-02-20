@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Link,
   Box,
-  Container,
   Card,
   CardBody,
   Text,
@@ -12,9 +11,6 @@ import {
   Image,
   Button,
   Icon,
-  HStack,
-  VStack,
-  Fade,
   ScaleFade,
   Slide,
   SlideFade,
@@ -24,17 +20,9 @@ import { motion } from "framer-motion";
 
 import { BsGithub } from "react-icons/bs";
 import { IoOpenOutline } from "react-icons/io5";
-import mySql from "../Assets/mysql.png";
-import react from "../Assets/react.png";
-import redux from "../Assets/redux.png";
-import node from "../Assets/node.svg";
-import express from "../Assets/express.svg";
-import sass from "../Assets/sass.png";
 
-// Websites screenshots
-import food from "../Assets/ohmyfood.webp";
-import groupomania from "../Assets/groupomania.webp";
-import piiquant from "../Assets/piiquante.png";
+import mockupFood from "../Assets/mockupFood.png";
+import mockupGrp from "../Assets/mockupGrp.png";
 
 function Feature({ title, image, desc, techno, href, linkcode, alt, ...rest }) {
   const handleClick = (event) => {
@@ -42,63 +30,54 @@ function Feature({ title, image, desc, techno, href, linkcode, alt, ...rest }) {
     window.open(href, "_blank");
   };
   return (
-    <Box
-      p={5}
-      mt={3}
-      /*  width="100vw" */
-      height="auto"
-      display="flex"
-      flexDirection="row"
-      flexWrap="wrap-reverse"
-      {...rest}
-    >
-      <Card
-        /* direction={{ base: "column", sm: "column" }} */
-        /* overflow="hidden" */
-        variant="outline"
-        minW="40vw"
-        maxW="40vw"
-        minH="80vh"
-        maxH="80vh"
-      >
+    <Box height="100vh" display="flex" flexDirection="column">
+      <Box height="120vh" pos="relative" backgroundColor="green">
         <Image
+          src={mockupGrp}
+          pos="fixed"
+          top={-scrollY * 0.4}
+          left="50vw"
+          right="0"
+          bottom="0"
+          height="70vh"
           objectFit="cover"
-          /* maxW={{ base: "100%", sm: "200px" }} */
-          src={image}
-          alt={alt}
         />
-        <Stack>
-          <CardBody>
-            <Heading size="md">{title}</Heading>
-            <Text py="2">{desc}</Text>
-            <Text py="2">Technologies utilisées:</Text>
-            <Box display="flex" flexDirection="row">
-              <Text>{techno}</Text>
-            </Box>
-          </CardBody>
-          <CardFooter>
-            <Box>
-              <Link href={href}>
-                <Button m={2} variant="solid" bg="#a9347e" colorScheme="white">
-                  <Icon as={IoOpenOutline} marginRight={2} />
-                  Live
-                </Button>
-              </Link>
-              <Link href={linkcode}>
-                <Button m={2} variant="solid" bg="#a9347e" colorScheme="white">
-                  <Icon as={BsGithub} marginRight={2} />
-                  Code
-                </Button>
-              </Link>
-            </Box>
-          </CardFooter>
-        </Stack>
-      </Card>
+        <Box
+          pos="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          textAlign="center"
+        >
+          <h1>Parallax Example 1</h1>
+        </Box>
+      </Box>
+      <Box height="500px" pos="relative">
+        <Image
+          src={mockupFood}
+          pos="fixed"
+          top={-scrollY * 0.3}
+          left="30vw"
+          right="0"
+          bottom="0"
+          height="70vh"
+          objectFit="cover"
+        />
+        <Box
+          pos="absolute"
+          top="30%"
+          left="50%"
+          transform="translate(-30%, -30%)"
+          textAlign="center"
+        >
+          <h1>Parallax Example 3</h1>
+        </Box>
+      </Box>
     </Box>
   );
 }
 
-const CardProject = () => {
+function ParallaxExample() {
   // Animation on scroll
   const { ref, inView } = useInView({
     threshold: 0.2,
@@ -123,6 +102,18 @@ const CardProject = () => {
     },
   };
 
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    function handleWindowScroll() {
+      setScrollY(window.pageYOffset);
+    }
+
+    window.addEventListener("scroll", handleWindowScroll);
+
+    return () => window.removeEventListener("scroll", handleWindowScroll);
+  }, []);
+
   return (
     <motion.div
       ref={ref}
@@ -139,9 +130,9 @@ const CardProject = () => {
             <Feature
               title="Groupomania"
               desc="Réseau social d'entreprise avec les fonctionnalités CRUD
-        (Create, Read, Update, Delete). Les utilisateurs peuvent publier
-        des posts avec des images et du texte, les commenter et de liker
-        les publications."
+      (Create, Read, Update, Delete). Les utilisateurs peuvent publier
+      des posts avec des images et du texte, les commenter et de liker
+      les publications."
               image={groupomania}
               linkcode="https://github.com/Kse-Nia/Groupomania"
               techno="MySQL, Sequelize, Node, React, Redux Toolkit"
@@ -154,10 +145,9 @@ const CardProject = () => {
             <Feature
               title="Piiquante"
               desc=" Mise en place du backend d'une application de gestion de sauces.
-        Les clients peuvent créer une « galerie de sauces » qui permet
-        de télécharger leurs sauces piquantes préférées et de liker ou
-        disliker celles des autres."
-              image={piiquant}
+      Les clients peuvent créer une « galerie de sauces » qui permet
+      de télécharger leurs sauces piquantes préférées et de liker ou
+      disliker celles des autres."
               linkcode="https://github.com/Kse-Nia/P6_piiquante_mudrakova"
               techno="Node, Express, MongoDB, Mongoose, Multer, Helmet"
               alt="accueil du site Piiquante"
@@ -170,16 +160,17 @@ const CardProject = () => {
               title="OhMyFood"
               image={food}
               desc="  Projet ohmyfood - Dynamisez une page web avec des animations
-        CSS."
+      CSS."
               linkcode="https://github.com/Kse-Nia/KseniyaMudrakova_3_18122020"
               href="https://kse-nia.github.io/ohmyfood/"
               techno="HTML, CSS, SASS"
+              alt="Page d'accueil de OhMyFood, recherche de restautant"
             />
           </ScaleFade>
         </motion.div>
       </Stack>
     </motion.div>
   );
-};
+}
 
-export default CardProject;
+export default ParallaxExample;

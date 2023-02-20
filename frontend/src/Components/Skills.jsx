@@ -27,7 +27,7 @@ import figma from "../Assets/figma.svg";
 
 const Skills = () => {
   return (
-    <Box sx={{ backgroundColor: "white", minHeight: "30vh" }}>
+    <Box sx={{ backgroundColor: "white", minHeight: "30vh", marginTop: "5vh" }}>
       <Container id="skills" maxWidth="100vw">
         <Heading m={4}>Compétences</Heading>
         <Flex justifyContent="space-between">

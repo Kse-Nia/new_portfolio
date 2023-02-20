@@ -41,27 +41,47 @@ const ContactForm = () => {
   };
 
   return (
-    <Box mt={5} bg="#ffff">
-      <Heading textAlign="center" mb={8}>
+    <Box
+      mt={5}
+      paddingTop="4vh"
+      paddingBottom="6vh"
+      bg="#1D1C1C"
+      display="flex"
+      alignItems="center"
+      flexDirection="column"
+    >
+      <Heading
+        textAlign="center"
+        mb={8}
+        mt={10}
+        /*  color="#a9347e" */ color="#BE7FF5"
+      >
         Me contacter
       </Heading>
-      <Box p={10}>
+      <Box
+        minWidth="50%"
+        display="flex"
+        justifyContent="center"
+        color="#BE7FF5"
+      >
         <form ref={form} onSubmit={handleSubmit}>
-          <FormControl id="name" isRequired>
+          <FormControl id="name" minW="50vw" isRequired>
             <FormLabel>Nom : </FormLabel>
-            <Input type="text" name="from_name" />
+            <Input borderColor="#BE7FF5" type="text" name="from_name" />
           </FormControl>
           <FormControl id="email" mt={4} isRequired>
             <FormLabel>Email : </FormLabel>
-            <Input type="email" name="email" />
+            <Input borderColor="#BE7FF5" type="email" name="email" />
           </FormControl>
           <FormControl id="message" mt={4} isRequired>
             <FormLabel>Votre message</FormLabel>
-            <Textarea name="message" />
+            <Textarea borderColor="#BE7FF5" name="message" />
           </FormControl>
-          <Button colorScheme="blue" mt={8} type="submit">
-            Envoyer
-          </Button>
+          <Box display="flex" justifyContent="center" mt={8}>
+            <Button bg="#a9347e" colorScheme="white" mt={8} type="submit">
+              Envoyer
+            </Button>
+          </Box>
         </form>
       </Box>
     </Box>

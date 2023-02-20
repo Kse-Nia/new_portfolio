@@ -13,36 +13,74 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 const Navbar = () => {
   return (
     <Container
-      sx={{
-        background: "#2D2B2B",
-        maxWidth: "100vw",
-        minHeight: "10vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className="header"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      bg="white"
+      p={1}
+      backgroundColor="#2D2B2B"
+      minH="6vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      maxW="100vw"
+      zIndex="1000"
     >
       <header>
         <nav>
-          <Box color="white">
+          <Box color="white" fontSize="xl">
             <ul>
               <li>
-                <Link className="link" href="/me" mr={4}>
+                <Link
+                  _hover={{
+                    textShadow:
+                      "0 0 .1em hotpink, 0 0 .2em hotpink, 0 0 .3em hotpink",
+                  }}
+                  className="link"
+                  href="/me"
+                  mr={4}
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link className="link" href="#skills" mr={4}>
+                <Link
+                  _hover={{
+                    textShadow:
+                      "0 0 .1em hotpink, 0 0 .2em hotpink, 0 0 .3em hotpink",
+                  }}
+                  className="link"
+                  href="#skills"
+                  mr={4}
+                >
                   Skills
                 </Link>
               </li>
               <li>
-                <Link className="link" href="#projects" mr={4}>
+                <Link
+                  _hover={{
+                    textShadow:
+                      "0 0 .1em hotpink, 0 0 .2em hotpink, 0 0 .3em hotpink",
+                  }}
+                  className="link"
+                  href="#projects"
+                  mr={4}
+                >
                   Mes projets
                 </Link>
               </li>
               <li>
-                <Link className="link" href="/contact" mr={4}>
+                <Link
+                  _hover={{
+                    textShadow:
+                      "0 0 .1em hotpink, 0 0 .2em hotpink, 0 0 .3em hotpink",
+                  }}
+                  className="link"
+                  href="/contact"
+                  mr={4}
+                >
                   Contact
                 </Link>
               </li>
