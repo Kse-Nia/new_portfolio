@@ -3,32 +3,29 @@ import {
   Link,
   Box,
   Container,
-  Card,
-  CardBody,
   Text,
-  Stack,
   Heading,
-  CardFooter,
   Image,
-  Button,
   Icon,
-  HStack,
-  VStack,
   Flex,
 } from "@chakra-ui/react";
-import react from "../Assets/react.svg";
+import react2 from "../Assets/icons/react2.png";
 import javascript from "../Assets/javascript.svg";
 import sass from "../Assets/sass.svg";
 import node from "../Assets/nodejs.svg";
-import mysql from "../Assets/mysql.svg";
+import mysql from "../Assets/icons/mysql.png";
 import mongodb from "../Assets/mongodb.svg";
 import adobe from "../Assets/adobexd.svg";
-import figma from "../Assets/figma.svg";
+import figma from "../Assets/icons/figma.png";
+import seo2 from "../Assets/icons/seo2.png";
 
 const Skills = () => {
   return (
-    <Box sx={{ backgroundColor: "white", minHeight: "30vh", marginTop: "5vh" }}>
-      <Container id="skills" maxWidth="100vw">
+    <Box
+      id="skills"
+      sx={{ backgroundColor: "white", minHeight: "30vh", marginTop: "5vh" }}
+    >
+      <Container maxWidth="100vw">
         <Heading m={4}>Compétences</Heading>
         <Flex justifyContent="space-between">
           <Box ml={5} mr={5}>
@@ -36,21 +33,21 @@ const Skills = () => {
               <Heading fontSize="1.7rem">Backend</Heading>
               <Box display="flex" flexDirection="row">
                 <Image
-                  maxWidth="25%"
+                  maxWidth="40%"
                   height="auto"
                   m={1}
                   src={node}
                   alt="NodeJs"
                 />
                 <Image
-                  maxWidth="30%"
+                  maxWidth="40%"
                   height="auto"
                   m={1}
                   src={mysql}
                   alt="MySql"
                 />
                 <Image
-                  maxWidth="30%"
+                  maxWidth="35%"
                   height="auto"
                   m={1}
                   src={mongodb}
@@ -64,14 +61,14 @@ const Skills = () => {
               <Heading fontSize="1.7rem">Frontend</Heading>
               <Box display="flex" flexDirection="row">
                 <Image
-                  maxWidth="25%"
+                  maxWidth="40%"
                   height="auto"
                   m={1}
-                  src={react}
+                  src={react2}
                   alt="React"
                 />
                 <Image
-                  maxWidth="30%"
+                  maxWidth="40%"
                   height="auto"
                   m={1}
                   src={sass}
@@ -85,14 +82,14 @@ const Skills = () => {
               <Heading fontSize="1.7rem">Design</Heading>
               <Box display="flex" flexDirection="row">
                 <Image
-                  maxWidth="25%"
+                  maxWidth="35%"
                   height="auto"
                   m={1}
                   src={adobe}
                   alt="Adobe XD"
                 />
                 <Image
-                  maxWidth="30%"
+                  maxWidth="35%"
                   height="auto"
                   m={1}
                   src={figma}
@@ -105,7 +102,14 @@ const Skills = () => {
             <Box display="flex" flexDirection="column">
               <Heading fontSize="1.7rem">Autre</Heading>
               <Box display="flex" flexDirection="column">
-                <Text>SEO</Text>
+                {/*    <Text>SEO</Text> */}
+                <Image
+                  maxWidth="35%"
+                  height="auto"
+                  m={1}
+                  src={seo2}
+                  alt="seo"
+                />
                 <Text>Responsive</Text>
               </Box>
             </Box>

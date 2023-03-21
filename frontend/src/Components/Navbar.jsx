@@ -78,7 +78,7 @@ const Navbar = () => {
                       "0 0 .1em hotpink, 0 0 .2em hotpink, 0 0 .3em hotpink",
                   }}
                   className="link"
-                  href="/contact"
+                  href="#contact"
                   mr={4}
                 >
                   Contact

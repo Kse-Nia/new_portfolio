@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import mockupFood from "../Assets/mockupFood.png";
 import mockupGrp from "../Assets/mockupGrp.png";
 
@@ -29,7 +29,15 @@ function ParallaxExample() {
         bgPos="right"
         pos="relative"
         bgRepeat="no-repeat"
-      ></Box>
+      >
+        <Box>
+          <Text>OhMyFood</Text>
+          <Text>Projet 3</Text>
+          <Text className="description" color="white">
+            Dynamisez une page web avec des animations CSS.
+          </Text>
+        </Box>
+      </Box>
     </Box>
   );
 }
